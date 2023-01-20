@@ -39,7 +39,7 @@ export const searchFilter = [
       { name: "Yobe", value: "" },
       { name: "Zamfara", value: "" },
     ],
-    placeholder: "localstate",
+    placeholder: "local state",
     queryName: "localstate",
     label: "State",
   },
@@ -89,12 +89,12 @@ export const getFilterValues = (filterValues: any) => {
   } = filterValues;
 
   const values = [
-    { name: localstate, value: localstate },
-    { name: university, value: university },
-    { name: polytechnic, value: polytechnic },
-    { name: college, value: college },
-    { name: secondary, value: secondary },
-    { name: othersdegrees, value: othersdegrees },
+    { name: "localstate", value: localstate },
+    { name: "university", value: university },
+    { name: "polytechnic", value: polytechnic },
+    { name: "college", value: college },
+    { name: "secondary", value: secondary },
+    { name: "othersdegrees", value: othersdegrees },
   ];
   return values;
 };

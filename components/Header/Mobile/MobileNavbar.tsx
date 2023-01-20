@@ -1,5 +1,7 @@
 import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
+import { FaTimes } from "react-icons/fa";
 
 const MobileNavbar = ({
   showNavbar,
@@ -8,11 +10,11 @@ const MobileNavbar = ({
   showNavbar: boolean;
   setShowNavbar: any;
 }) => {
+  const handleNavClick = () => {
+    setShowNavbar(!showNavbar);
+  };
   return (
-    <div
-      className="bg-black text-white absolute top-0 right-0 w-full p-4 h-screen hidden"
-      id="navbar-default-mobile"
-    >
+    <motion.div className="mobile-nav p-4">
       <div className="text-md ml-auto flex justify-between">
         <div>
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
@@ -24,23 +26,15 @@ const MobileNavbar = ({
             setShowNavbar(!showNavbar);
           }}
         >
-          x
+          <FaTimes className="text-white" />
         </button>
       </div>
-      <ul className="flex mt-4 flex-col space-y-4">
-        <li>
+      <ul className="flex mt-4 mb-8 flex-col space-y-4">
+        <li className="mt-4">
           <Link
-            href="/"
-            className="block py-2 pl-3  text-sm md:text-cyan-50"
-            aria-current="page"
-          >
-            All Events
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={`/courses?search=university`}
-            className="block py-2 pl-3 text-white rounded"
+            href={`/courses`}
+            className="block py-2  text-white rounded"
+            onClick={handleNavClick}
           >
             Universities Courses
           </Link>
@@ -48,7 +42,8 @@ const MobileNavbar = ({
         <li>
           <Link
             href={`/courses?search=polytechnic`}
-            className="block py-2 pl-3 text-white rounded"
+            className="block py-2  text-white rounded"
+            onClick={handleNavClick}
           >
             Polytechnic Courses
           </Link>{" "}
@@ -56,15 +51,17 @@ const MobileNavbar = ({
         <li>
           <Link
             href={`/courses?search=post-secondary`}
-            className="block py-2 pl-3 text-white rounded"
+            className="block py-2  text-white rounded"
+            onClick={handleNavClick}
           >
             Other Degrees
           </Link>{" "}
         </li>
         <li>
           <Link
-            href={`/institutions?search=university`}
-            className="block py-2 pl-3 text-white rounded"
+            href={`/institutions`}
+            className="block py-2  text-white rounded"
+            onClick={handleNavClick}
           >
             Institutions
           </Link>
@@ -72,14 +69,15 @@ const MobileNavbar = ({
         <li>
           <Link
             href="/"
-            className="block py-2 pl-3 text-white rounded "
+            className="block py-2  text-white rounded "
             aria-current="page"
+            onClick={handleNavClick}
           >
             Contact Us
           </Link>
         </li>
       </ul>
-    </div>
+    </motion.div>
   );
 };
 

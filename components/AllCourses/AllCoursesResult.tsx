@@ -7,12 +7,11 @@ import { useRouter } from "next/router";
 
 const AllCoursesResult = ({
   courses,
+  setCourses,
 }: {
   courses: courseDetailInterface[];
+  setCourses: any;
 }) => {
-  const router = useRouter();
-  const [searchData, setSearchData] = useState("");
-
   return (
     <div className="w-full bg-white rounded-sm courses-search-result-boxshadow lg:col-span-3">
       <div className="flex items-center justify-between border-b border-gray-200 p-4">
@@ -24,9 +23,8 @@ const AllCoursesResult = ({
               type="text"
               placeholder="search for"
               className="border-none text-gray-900"
-              value={searchData}
               onChange={(e) => {
-                setSearchData(e.target.value);
+                setCourses(e.target.value);
               }}
             />
             <AiOutlineSearch className="text-gray-800" />

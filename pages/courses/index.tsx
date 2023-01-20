@@ -12,9 +12,11 @@ export default function Courses({
   allCourses: courseDetailInterface[];
 }) {
   const [courses, setCourses] = useState(allCourses);
+  const [searchCourse, setSearchCourse] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
-  const search = router.query.search;
+  // const search = router.query.search;
   const localState = router.query.localState;
   const faculty = router.query.faculty;
   const department = router.query.department;
@@ -22,18 +24,30 @@ export default function Courses({
 
   useEffect(() => {
     // const res = fetch(
-    //   `localhost:3000/courses?search=${search}&localState=${localState}&faculty=${faculty}&department=${department}&institution=${institution}`
+    //   `localhost:3000/courses?institution=${institution}localState=${localState}&faculty=${faculty}&department=${department}`
     // );
     // const data = res.json()
     // setCourses(res)
   }, []);
+
+  // useEffect(() => {
+  //   if (searchCourse !== "") {
+  //     const fetchSearch = async () => {
+  //       setLoading(true);
+  //       const res = await fetch("...searchAPI");
+  //       const data = await res.json();
+  //       setCourses(data);
+  //       setLoading(false);
+  //     };
+  //   }
+  // }, [searchCourse]);
 
   return (
     <div>
       <Head>
         <title>All Courses</title>
       </Head>
-      <AllCourses courses={courses} />
+      <AllCourses courses={courses} setCourses={setCourses} />
     </div>
   );
 }

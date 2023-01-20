@@ -4,8 +4,15 @@ import MobileNavbar from "./Mobile/MobileNavbar";
 import { motion } from "framer-motion";
 import { navVariants } from "../../utils/motionframer";
 
-const Navbar = ({ navClass }: { navClass?: string }) => {
-  const [showNavbar, setShowNavbar] = useState(false);
+const Navbar = ({
+  navClass,
+  showNavbar,
+  setShowNavbar,
+}: {
+  navClass?: string;
+  showNavbar: boolean;
+  setShowNavbar: any;
+}) => {
   return (
     <motion.nav
       className="bg-black lg:bg-slate-900 text-white border-b border-gray-600"
@@ -25,10 +32,7 @@ const Navbar = ({ navClass }: { navClass?: string }) => {
               JambCourses
             </span>
           </Link>
-          <Link
-            href={`/courses?search=university`}
-            className="hidden lg:flex items-center"
-          >
+          <Link href={`/courses`} className="hidden lg:flex items-center">
             <span className="self-center text-[16px] whitespace-nowrap text-gray-400">
               Universities Courses
             </span>
@@ -49,10 +53,7 @@ const Navbar = ({ navClass }: { navClass?: string }) => {
               Other Degrees
             </span>
           </Link>
-          <Link
-            href={`/institutions?search=university`}
-            className="hidden lg:flex items-center"
-          >
+          <Link href={`/institutions`} className="hidden lg:flex items-center">
             <span className="self-center text-[16px] whitespace-nowrap text-gray-400">
               Institutions
             </span>
@@ -96,9 +97,6 @@ const Navbar = ({ navClass }: { navClass?: string }) => {
             ></path>
           </svg>
         </button>
-        {showNavbar && (
-          <MobileNavbar showNavbar={showNavbar} setShowNavbar={setShowNavbar} />
-        )}
       </div>
     </motion.nav>
   );

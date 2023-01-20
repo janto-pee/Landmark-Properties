@@ -3,6 +3,7 @@ import AllCourses from "../../components/AllCourses/AllCourses";
 import { institutionCard } from "../../utils/data";
 import AllInstitutions from "../../components/Institutions/AllInstitutions";
 import { institutionCardInterface } from "../../types/interface";
+import axios from "axios";
 
 export default function Institutions({
   institute,
@@ -18,3 +19,7 @@ export default function Institutions({
     </div>
   );
 }
+
+// export async function getStaticProps (){
+//   const res = axios.get('')
+// }

@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { filterData } from "../../utils/data";
-import InnerFilter from "./InnerFilter";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { filterInterface } from "../../types/interface";
-import { selectFilter as filt } from "../../utils/data";
 import { useRouter } from "next/router";
 import { getFilterValues, searchFilter } from "../../utils/searchFilter";
 
@@ -12,6 +8,7 @@ const Filter = () => {
   const router = useRouter();
 
   const searchProperties = (filtervalues: any) => {
+    console.log(filtervalues);
     const path = router.pathname;
     const { query } = router;
 
@@ -19,22 +16,11 @@ const Filter = () => {
 
     values.forEach((item) => {
       if (item.value && filtervalues?.[item.name]) {
-        query[item.name] = item.value;
+        console.log((query[item.name] = item.value));
       }
     });
     router.push({ pathname: path, query: query });
   };
-
-  // useEffect(() => {
-  //   if(searchTerm != ''){
-  //     const fetchData = async () => {
-  // setLoading(true)
-  // const data = await fetch(`${baseUrl}/xyz`)
-  // setallData(data.result)
-  //     }
-  //   }
-  // }, [])
-
   return (
     <div className="z-10 rounded  dark:bg-gray-700 p-2 mt-4 md:mt-0 lg:col-span-1">
       <div>
@@ -52,10 +38,8 @@ const Filter = () => {
               <select
                 placeholder={items.placeholder}
                 className="bg-transparent p-2 border border-gray-600"
-                onClick={(e) => {
-                  searchProperties({
-                    [items.queryName]: e.currentTarget.value,
-                  });
+                onChange={(e) => {
+                  searchProperties(e.target.value);
                 }}
               >
                 {items?.item.map((item, i) => (

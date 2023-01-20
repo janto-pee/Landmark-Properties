@@ -8,6 +8,15 @@ body {
   overflow-x: hidden;
   font-family: "Nunito", Roboto, sans-serif;
 }
+.mobile-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  height: 100vh;
+  width: 100vw;
+  background: black;
+}
 .hero-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("/asset/cardgrad.jpg");
@@ -63,20 +72,3 @@ body {
 course-breaker-grid {
   grid-template-columns: 2fr 1fr 1fr 1fr;
 }
-/* .cardStyle::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  transition: 0.5s ease all;
-  background: #e5e5e5;
-}
-.cardStyle:hover img {
-  transform: scale(1.1);
-}
-.cardStyle:hover::after {
-  opacity: 0.2;
-} */

@@ -20,7 +20,7 @@ const Cards = ({ courses }: { courses: homeCardInterface[] }) => {
           }
         })}
       </div>
-      <Link href={`/courses?search=courses mt-4`}>
+      <Link href={`/courses?institution=university`} className="mt-4">
         <Button
           btnText="See More..."
           btnClass="border border-blue-500 text-[16px] rounded-3xl p-2 px-20 md:px-12 hover:bg-blue-300 text-blue-800 "
