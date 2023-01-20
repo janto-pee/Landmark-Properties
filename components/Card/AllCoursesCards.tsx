@@ -3,7 +3,7 @@ import React from "react";
 import { GrCertificate } from "react-icons/gr";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { BiTimeFive } from "react-icons/bi";
-import { courseDetailInterface, coursesInterface } from "../../types/interface";
+import { courseDetailInterface } from "../../types/interface";
 import { FaCertificate } from "react-icons/fa";
 
 const AllCoursesCards = ({ item }: { item: courseDetailInterface }) => {

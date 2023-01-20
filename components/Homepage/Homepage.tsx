@@ -6,19 +6,9 @@ import Cards from "../Cards/Cards";
 import Breaker from "../Breaker/Breaker";
 import UpcomingEvents from "../UpcomingEvents/UpcomingEvents";
 import Footer from "../Footer/Footer";
-import {
-  coursesInterface,
-  eventInterface,
-  homeCardInterface,
-} from "../../types/interface";
+import { eventInterface, homeCardInterface } from "../../types/interface";
 
-const Homepage = ({
-  courses,
-  eventList,
-}: {
-  courses: homeCardInterface[];
-  eventList: eventInterface[];
-}) => {
+const Homepage = ({ courses }: { courses: homeCardInterface[] }) => {
   return (
     <div>
       <TopHeader />
@@ -26,7 +16,7 @@ const Homepage = ({
       <HomeHero />
       <Cards courses={courses} />
       <Breaker />
-      <UpcomingEvents eventList={eventList} />
+      <UpcomingEvents />
       <Footer />
     </div>
   );

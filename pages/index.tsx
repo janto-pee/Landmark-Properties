@@ -1,22 +1,20 @@
 import Head from "next/head";
 import Homepage from "../components/Homepage/Homepage";
 import {
-  coursesInterface,
+  courseDetailInterface,
   eventInterface,
   homeCardInterface,
 } from "../types/interface";
-import { eventsList, instituteInfo } from "../utils/data";
-import { fetchData, homeData } from "../utils/fetchAPI";
+import { eventsList } from "../utils/data";
+import { homeData } from "../utils/fetchAPI";
 
 export interface Iprops {
-  courses: coursesInterface[];
+  courses: courseDetailInterface[];
   eventList: eventInterface[];
   homeCourse: homeCardInterface[];
 }
 
-export default function Home({ courses, eventList, homeCourse }: Iprops) {
-  console.log(homeCourse);
-
+export default function Home({ homeCourse }: Iprops) {
   return (
     <div>
       <Head>
@@ -24,7 +22,7 @@ export default function Home({ courses, eventList, homeCourse }: Iprops) {
           Jamb Courses| Joint Admission and Matriculation Board Courses
         </title>
       </Head>
-      <Homepage courses={homeCourse} eventList={eventsList} />
+      <Homepage courses={homeCourse} />
     </div>
   );
 }

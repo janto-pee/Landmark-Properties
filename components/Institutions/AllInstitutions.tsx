@@ -2,16 +2,16 @@ import React from "react";
 import CoursesHero from "../Hero/CoursesHero";
 import Navbar from "../Header/Navbar";
 import Footer from "../Footer/Footer";
-import { coursesInterface, eventInterface } from "../../types/interface";
 import AllInstitutionResults from "./AllInstitutionResults";
-import Filter from "../Filtering/Filter";
+import {
+  institutionCardInterface,
+  institutionDetailInterface,
+} from "../../types/interface";
 
 const AllInstitutions = ({
-  courses,
-  eventList,
+  institute,
 }: {
-  courses: coursesInterface[];
-  eventList: eventInterface[];
+  institute: institutionCardInterface[];
 }) => {
   return (
     <div>
@@ -19,7 +19,7 @@ const AllInstitutions = ({
       <CoursesHero title="Institutions" />
       <div className="bg-gray-100">
         <div className="px-2 lg:w-[95%] mx-auto py-8 grid grid-cols-1 ">
-          <AllInstitutionResults courses={courses} />
+          <AllInstitutionResults institute={institute} />
         </div>
       </div>
       <Footer />

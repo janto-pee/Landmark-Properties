@@ -1,14 +1,27 @@
 import React from "react";
 import Link from "next/link";
-import { courseDetailInterface } from "../../types/interface";
+import {
+  courseDetailInterface,
+  institutionDetailInterface,
+} from "../../types/interface";
 import { FcPositiveDynamic } from "react-icons/fc";
 import { GoLocation } from "react-icons/go";
 
 const InstitutionDetailLeft = ({
-  course,
+  institute,
 }: {
-  course: courseDetailInterface;
+  institute: institutionDetailInterface;
 }) => {
+  const {
+    name,
+    instituteSummary,
+    instituteImg,
+    fullname,
+    pmb,
+    address,
+    tel,
+    position,
+  } = institute;
   return (
     <div className="hidden text-center md:text-left lg:block rounded lg:basis-2/6 p-4 ">
       <div className="p-4 px-8 border">
@@ -16,15 +29,15 @@ const InstitutionDetailLeft = ({
         <div className="flex flex-col ">
           <div className="flex items-center gap-2 my-4">
             <FcPositiveDynamic />
-            <p>4th Ranked University 2022</p>
+            <p>{position} Ranked University 2022</p>
           </div>
           <div className="flex items-center gap-2 my-4">
             <GoLocation />
-            <p>Ile Ife, Osun State</p>
+            <p>{address}</p>
           </div>
           <div className="flex items-center gap-2 my-4">
             <FcPositiveDynamic />
-            <p>OAU</p>
+            <p>{name}</p>
           </div>
         </div>
       </div>

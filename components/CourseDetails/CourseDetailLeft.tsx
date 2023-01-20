@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { courseDetailInterface, coursesInterface } from "../../types/interface";
+import { courseDetailInterface } from "../../types/interface";
 
 const CourseDetailLeft = ({ course }: { course: courseDetailInterface }) => {
   return (

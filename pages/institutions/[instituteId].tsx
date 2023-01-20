@@ -1,12 +1,12 @@
 import Head from "next/head";
-import { courseDetailInterface } from "../../types/interface";
+import { institutionDetailInterface } from "../../types/interface";
 import InstitutionDetails from "../../components/InstitutionDetails/InstitutionDetails";
-import { courseDetail } from "../../utils/data";
+import { institutionDetail } from "../../utils/data";
 
 export default function InstituteDetail({
-  course,
+  institute,
 }: {
-  course: courseDetailInterface;
+  institute: institutionDetailInterface;
 }) {
   return (
     <div>
@@ -14,7 +14,7 @@ export default function InstituteDetail({
         <title>Course Details</title>
       </Head>
 
-      <InstitutionDetails course={courseDetail} />
+      <InstitutionDetails institute={institutionDetail} />
     </div>
   );
 }

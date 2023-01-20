@@ -1,10 +1,21 @@
 import Link from "next/link";
 import React from "react";
-import { coursesInterface } from "../../types/interface";
+import { institutionCardInterface } from "../../types/interface";
 import { FcPositiveDynamic } from "react-icons/fc";
 import { GoLocation } from "react-icons/go";
 
-const AllInstituteCards = ({ item }: { item: coursesInterface }) => {
+const AllInstituteCards = ({ item }: { item: institutionCardInterface }) => {
+  const {
+    name,
+    instituteSummary,
+    instituteImg,
+    fullname,
+    pmb,
+    address,
+    tel,
+    position,
+  } = item;
+  const imgpath = "/asset/cardimg2.jpg";
   return (
     <Link
       href={`/institutions/${item.id}`}
@@ -13,33 +24,31 @@ const AllInstituteCards = ({ item }: { item: coursesInterface }) => {
       <div className="md:basis-1/2">
         <img
           className="object-cover md:rounded"
-          src="/asset/cardimg2.jpg"
+          src={instituteImg ? instituteImg : imgpath}
           alt=""
         />
       </div>
       <div className="md:basis-1/2 flex flex-col gap-2 p-4 md:px-12 leading-normal">
         <h5 className="mb-2 text-[18px] md:text-[22px] tracking-tight text-gray-800 hover:text-blue-800">
-          Obafemi Awolowo University
+          {fullname}
         </h5>
         <p className="mb-3 text-[15px] md:text-md text-gray-500">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus,
-          corporis voluptatum! Expedita temporibus eum provident harum dolore
-          iure voluptatibus et.
+          {instituteSummary}
         </p>
         <div className="flex flex-col ">
           <div className="flex items-center gap-2">
             <FcPositiveDynamic />
             <p className="text-[15px] text-gray-500">
-              4th Ranked University 2022
+              {position} Ranked University 2022
             </p>
           </div>
           <div className="flex items-center gap-2 my-4">
             <GoLocation />
-            <p className="text-[15px] text-gray-500">Ile Ife, Osun State</p>
+            <p className="text-[15px] text-gray-500">{address}</p>
           </div>
           <div className="flex items-center gap-2">
             <FcPositiveDynamic />
-            <p className="text-[15px] text-gray-500">OAU</p>
+            <p className="text-[15px] text-gray-500">{name}</p>
           </div>
         </div>
       </div>

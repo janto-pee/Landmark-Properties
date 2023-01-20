@@ -52,11 +52,12 @@ const CourseDetailRight = ({ course }: { course: courseDetailInterface }) => {
       <div className="my-4 py-8 md:py-4">
         <h1 className="mb-4 text-xl ">School Fees & Funding</h1>
         <ul className="text-gray-700">
-          {course.feesAndFunding.map((item, index) => (
-            <li className="list-none" key={index}>
-              {item}
-            </li>
-          ))}
+          {course.feesAndFunding &&
+            course.feesAndFunding.map((item, index) => (
+              <li className="list-none" key={index}>
+                {item}
+              </li>
+            ))}
         </ul>
       </div>
       {/* <div className="my-4 ">

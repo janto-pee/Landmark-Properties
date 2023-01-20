@@ -1,15 +1,20 @@
 import Head from "next/head";
 import AllCourses from "../../components/AllCourses/AllCourses";
-import { eventsList, instituteInfo } from "../../utils/data";
+import { institutionCard } from "../../utils/data";
 import AllInstitutions from "../../components/Institutions/AllInstitutions";
+import { institutionCardInterface } from "../../types/interface";
 
-export default function Institutions() {
+export default function Institutions({
+  institute,
+}: {
+  institute: institutionCardInterface[];
+}) {
   return (
     <div>
       <Head>
         <title>All Courses</title>
       </Head>
-      <AllInstitutions courses={instituteInfo} eventList={eventsList} />
+      <AllInstitutions institute={institutionCard} />
     </div>
   );
 }

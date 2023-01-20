@@ -1,5 +1,15 @@
 import { instituteInfo } from "./data";
 
+export const baseUrl = process.env.NEXT_PUBLIC_BASEURL;
+
+export const headers = {
+  headers: {
+    "X-BingApis-SDK": "true",
+    "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPIDKEY,
+    "X-RapidAPI-Host": process.env.NEXT_PUBLIC_RAPIDAPI_HOST,
+  },
+};
+
 export async function fetchData() {
   // const res = await fetch('');
   // const data = res.json()
@@ -20,8 +30,6 @@ export async function homeData() {
     years: item.years,
     degreeAbbr: item.degreeAbbr,
   }));
-
-  console.log(homeCard);
 
   const res = homeCard.filter((item, index) => {
     if (index < 8) {

@@ -1,5 +1,4 @@
 import React from "react";
-import { coursesInterface } from "../../types/interface";
 
 const CoursesHero = ({ title }: { title: string }) => {
   return (

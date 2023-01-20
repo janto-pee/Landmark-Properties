@@ -409,6 +409,7 @@ export const universityContact = [
     pmb: "P.M.B 3011,Kano Tel: 064-666021-3",
   },
 ];
+
 export const eventsList = [
   {
     id: "e0",
@@ -438,6 +439,7 @@ export const eventsList = [
       "Here are the biggest enterprise technology acquisitions of 2021 so far,in reverse chronological order.",
   },
 ];
+
 export const filterData = [1, 2, 3, 4];
 
 export const selectFilter = [
@@ -474,4 +476,33 @@ export const courseDetails = {
   degreeAbbr: "B.Eng",
   mode: "Fulltime",
   department: "Department of Accountancy",
+};
+
+export const institutionCard = [
+  {
+    id: "i0",
+    name: "OAU",
+    instituteSummary:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi vitae commodi quidem vel temporibus est ex quos ullam beatae provident?",
+    fullname: "Obafemi Awolow University",
+    pmb: "ppsoos",
+    address: "",
+    position: "4",
+    tel: "0123377",
+  },
+];
+
+export const institutionDetail = {
+  id: "i0",
+  name: "OAU",
+  instituteSummary:
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi vitae commodi quidem vel temporibus est ex quos ullam beatae provident?",
+  fullname: "Obafemi Awolow University",
+  pmb: "ppsoos",
+  address: "14",
+  tel: "0123377",
+  position: "4th",
+  state: "Osun",
+  faculty: ["Law"],
+  Department: ["Law"],
 };

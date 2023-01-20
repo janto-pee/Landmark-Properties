@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { coursesInterface, homeCardInterface } from "../../types/interface";
+import { homeCardInterface } from "../../types/interface";
 import { GoLocation } from "react-icons/go";
 import { IoIosCheckmark } from "react-icons/io";
 import { FaCertificate } from "react-icons/fa";
