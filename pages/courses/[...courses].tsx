@@ -8,7 +8,7 @@ export default function CoursesSearch() {
       <Head>
         <title>All Courses</title>
       </Head>
-      <AllCourses courses={instituteInfo} />
+      {/* <AllCourses courses={instituteInfo} /> */}
     </div>
   );
 }
