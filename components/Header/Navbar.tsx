@@ -23,13 +23,13 @@ const Navbar = ({
       <div className="container w-[95%] px-4 py-2 flex flex-wrap items-center justify-between mx-auto">
         <div className="flex items-center gap-12 lg:basis-4/6">
           <Link href="/" className={`flex items-center ${navClass}`}>
-            <img
+            {/* <img
               src="/favicon.ico"
               className="h-6 mr-1 sm:h-9"
               alt="Flowbite Logo"
-            />
+            /> */}
             <span className="self-center text-[1.2rem] whitespace-nowrap text-gray-200">
-              JambCourses
+              JambitePortal
             </span>
           </Link>
           <Link href={`/courses`} className="hidden lg:flex items-center">
@@ -38,7 +38,7 @@ const Navbar = ({
             </span>
           </Link>
           <Link
-            href={`/courses?search=polytechnic`}
+            href={`/courses?institutionType=polytechnic`}
             className="hidden lg:flex items-center"
           >
             <span className="self-center text-[16px] whitespace-nowrap text-gray-400">
@@ -46,18 +46,26 @@ const Navbar = ({
             </span>
           </Link>
           <Link
-            href={`/courses?search=post-secondary`}
+            href={`/courses?institutionType=college`}
             className="hidden lg:flex items-center"
           >
             <span className="self-center text-[16px] whitespace-nowrap text-gray-400">
-              Other Degrees
+              College Degrees
             </span>
           </Link>
-          <Link href={`/institutions`} className="hidden lg:flex items-center">
+          <Link
+            href={`/courses?institutionType=Innovation`}
+            className="hidden lg:flex items-center"
+          >
+            <span className="self-center text-[16px] whitespace-nowrap text-gray-400">
+              Innovation Programmes
+            </span>
+          </Link>
+          {/* <Link href={`/institutions`} className="hidden lg:flex items-center">
             <span className="self-center text-[16px] whitespace-nowrap text-gray-400">
               Institutions
             </span>
-          </Link>
+          </Link> */}
         </div>
 
         <div className="hidden w-full lg:block md:w-auto" id="navbar-default">

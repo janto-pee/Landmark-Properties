@@ -27,7 +27,7 @@ const CourseDetails = ({ course }: { course: courseDetailInterface }) => {
         <CourseDetailBreaker course={course} />
       </div>
       <div className="flex flex-col md:flex-row items-start gap-4 my-8 md:my-16 w-[95%] mx-auto">
-        <CourseDetailLeft course={course} />
+        <CourseDetailLeft />
         <CourseDetailRight course={course} />
       </div>
       <Footer />

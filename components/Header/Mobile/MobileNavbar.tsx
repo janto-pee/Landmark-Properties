@@ -41,7 +41,7 @@ const MobileNavbar = ({
         </li>{" "}
         <li>
           <Link
-            href={`/courses?search=polytechnic`}
+            href={`/courses?institutionType=Polytechnic`}
             className="block py-2  text-white rounded"
             onClick={handleNavClick}
           >
@@ -50,7 +50,7 @@ const MobileNavbar = ({
         </li>
         <li>
           <Link
-            href={`/courses?search=post-secondary`}
+            href={`/courses?institutionType=Innovation`}
             className="block py-2  text-white rounded"
             onClick={handleNavClick}
           >

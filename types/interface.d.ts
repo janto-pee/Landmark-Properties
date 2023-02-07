@@ -1,78 +1,92 @@
 export interface homeCardInterface {
-  id: string;
-  schoolImg?: string;
+  _id: string;
   course: string;
-  utme: string[];
-  address?: string;
-  years?: string | number;
   degreeAbbr: string;
+  schools: string;
+  utme: string;
+  faculty: string;
+  years?: string | number;
+}
+
+export interface courseCardInterface {
+  _id: string;
+  course: string;
+  degreeAbbr: string;
+  schools: string;
+  utme: string;
+  faculty: string;
+  years?: string | number;
 }
 
 export interface courseDetailInterface {
-  id: string;
+  _id: string;
+  utme: string;
   course: string;
-  courseImg?: string;
+  image: string;
   schools: string;
-  schoolImg?: string;
-  schoolfull?: string;
-  courseSummary?: string;
-  postutme?: string;
-  requirement: string[];
-  feesAndFunding?: (string | number)[];
-  ssce: string[];
-  utme: string[];
-  cardUtme: string;
-  remark: string[];
-  years?: number | string;
-  degree?: string;
-  degreeAbbr?: string;
-  mode?: string;
-  department?: string;
+  courseSummary: string;
+  ssce: [string];
+  remark?: [string];
+  years: string;
+  degree: string;
+  degreeAbbr: string;
+  mode: string;
+  faculty: string;
   directEntry?: string;
+  isFeatured: boolean;
+  institutionType: string;
+  isFeatured?: boolean;
+  requirement?: [];
+  remark?: [];
+  directEntry?: string;
+  instituteProp?: institutionDetailInterface;
+}
+
+export interface institutionCardInterface {
+  _id: string;
+  name: string;
+  instituteSummary: string;
+  fullSchoolName: string;
+  pmb?: string;
   address?: string;
+  position?: string;
+  tel?: string;
+}
+
+export interface institutionDetailInterface {
+  _id: string;
+  name: string;
+  instituteSummary?: string;
+  fullSchoolName?: string;
+  pmb: string;
+  address: string;
+  state: string;
+  tel: string;
+  position?: string;
+  universityType?: string;
+  postUtme?: string;
+  schoolFee?: string[];
+  isFeatured?: Boolean;
+  institutionType: string;
+  directEntry?: string[];
+  entryRequirement?: string[];
+  remark?: string[];
+  requirement?: string[];
 }
 
 export interface eventInterface {
   id: number | string;
   name: string;
-  location: string;
-  datePublished: string;
+  thumbnail: string;
   title: string;
   image: any;
   description: string;
   url?: string;
-  provider?: any[];
+  provider?: any;
 }
 
 export interface filterInterface {
   name: string;
   value: string | number;
   count?: string | number;
-}
-
-export interface institutionCardInterface {
-  id: string;
-  name: string;
-  instituteSummary: string;
-  fullname: string;
-  pmb?: string;
-  address?: string;
-  position?: string;
-  tel?: string;
-  instituteImg?: string;
-}
-
-export interface institutionDetailInterface {
-  id: string;
-  name: string;
-  instituteSummary: string;
-  fullname: string;
-  instituteImg?: string;
-  pmb?: string;
-  address?: string;
-  tel?: string;
-  position: string;
-  state: string;
-  faculty?: string[];
-  department?: string[];
 }

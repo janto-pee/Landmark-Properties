@@ -1,6 +1,5 @@
 import Head from "next/head";
 import AllCourses from "../../components/AllCourses/AllCourses";
-import { eventsList, instituteInfo } from "../../utils/data";
 
 export default function CoursesSearch() {
   return (

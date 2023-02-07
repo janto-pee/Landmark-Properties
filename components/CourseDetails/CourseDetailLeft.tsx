@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link";
 import { courseDetailInterface } from "../../types/interface";
 
-const CourseDetailLeft = ({ course }: { course: courseDetailInterface }) => {
+const CourseDetailLeft = () => {
   return (
-    <div className="hidden text-center md:text-left md:basis-2/6 p-4 md:flex md:flex-col md:border-r md:border-gray-300">
+    <div className="hidden text-center md:text-left md:basis-[22%] p-4 md:flex md:flex-col md:border-r md:border-gray-300">
       <Link href="/" className="my-4">
         {" "}
         <button className="text-md text-blue-500 cursor-pointer">

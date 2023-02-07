@@ -4,7 +4,8 @@ import {
   courseDetailInterface,
   institutionCardInterface,
 } from "../../types/interface";
-import { selectFilter } from "../../utils/data";
+// import { selectFilter } from "../../utils/data";
+import { searchFilter } from "../../utils/searchFilter";
 import AllInstituteCards from "../Card/AllInstituteCards";
 import Button from "../Button/Button";
 
@@ -20,7 +21,7 @@ const AllInstitutionResults = ({
         <div className="flex flex-col md:flex-row items-center gap-4">
           <div className="hidden lg:flex px-2 py-2 rounded-md items-center justify-between border border-gray-300 bg-white gap-2">
             <select className="px-12  ">
-              {selectFilter.map((item, index) => (
+              {searchFilter.map((item: any, index: number) => (
                 <option
                   key={index}
                   value={item.value}

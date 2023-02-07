@@ -1,26 +1,28 @@
 import React from "react";
 import Link from "next/link";
-import {
-  courseDetailInterface,
-  institutionDetailInterface,
-} from "../../types/interface";
+
 import { FcPositiveDynamic } from "react-icons/fc";
 import { GoLocation } from "react-icons/go";
+import { institutionCardInterface } from "../../types/interface";
 
-const InstitutionDetailLeft = ({
-  institute,
-}: {
-  institute: institutionDetailInterface;
-}) => {
+const InstitutionDetailLeft = ({ institute }: { institute: any }) => {
   const {
+    _id,
     name,
     instituteSummary,
-    instituteImg,
-    fullname,
+    fullSchoolName,
     pmb,
     address,
+    state,
     tel,
     position,
+    universityType,
+    entryRequirement,
+    directEntry,
+    postUtme,
+    schoolFee,
+    isFeatured,
+    institutionType,
   } = institute;
   return (
     <div className="hidden text-center md:text-left lg:block rounded lg:basis-2/6 p-4 ">

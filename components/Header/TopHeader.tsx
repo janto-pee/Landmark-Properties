@@ -4,6 +4,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { motion } from "framer-motion";
 import SearchBox from "../Filtering/SearchBox";
 import { topHederVariants } from "../../utils/motionframer";
+import Image from "next/image";
 
 const TopHeader = () => {
   // const container = {
@@ -21,7 +22,9 @@ const TopHeader = () => {
       <div className="container w-[95%] px-4 py-4 flex flex-wrap items-center justify-between mx-auto">
         <div className="flex items-center space-x-8 lg:basis-4/6">
           <Link href="/" className="flex items-center">
-            <img
+            <Image
+              width={500}
+              height={500}
               src="/favicon.ico"
               className="h-6 mr-1 sm:h-9"
               alt="Flowbite Logo"
@@ -30,11 +33,13 @@ const TopHeader = () => {
               JambCourses
             </span>
           </Link>
-          <button className="hidden lg:flex px-4 py-2 rounded-3xl bg-blue-700 text-white">
-            Universities
-          </button>
+          <Link href={"/institutions"}>
+            <button className="hidden lg:flex px-4 py-2 rounded-3xl bg-blue-700 text-white">
+              Universities
+            </button>
+          </Link>
           <SearchBox
-            divClasses="hidden lg:flex px-8 py-2 rounded-3xl items-center justify-between bg-white gap-2 flex-grow text-[14px] text-[#252525]"
+            divClasses="hidden lg:flex px-8 border-none py-2 rounded-3xl items-center justify-between bg-white gap-2 flex-grow text-[14px] text-[#252525]"
             placeholderValue="search for the course or university you want to learn..."
             inputClasses="border-none w-full text-gray-900"
           >

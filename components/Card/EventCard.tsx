@@ -5,12 +5,11 @@ import { GoLocation } from "react-icons/go";
 import { AiOutlineCalendar } from "react-icons/ai";
 
 const EventCard = ({ item }: { item: eventInterface }) => {
-  const newTime = new Date(item.datePublished).toLocaleTimeString();
-  const newDate = new Date(item.datePublished).toLocaleDateString();
+  console.log(item);
+  const newTime = new Date().toLocaleTimeString();
+  const newDate = new Date().toLocaleDateString();
 
-  const newImg = item.image.thumbnail.contentUrl
-    ? item?.image?.thumbnail?.contentUrl
-    : "/asset/cardimg4.jpg";
+  const newImg = item.thumbnail ? item?.thumbnail : "/asset/cardimg4.jpg";
   const bgImage = `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),url(${newImg})`;
 
   return (

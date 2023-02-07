@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import AllCoursesCards from "../Card/AllCoursesCards";
-import { courseDetailInterface } from "../../types/interface";
+import { courseCardInterface } from "../../types/interface";
 import { localstate } from "../../utils/searchFilter";
 import { useRouter } from "next/router";
 
@@ -9,7 +9,7 @@ const AllCoursesResult = ({
   courses,
   setCourses,
 }: {
-  courses: courseDetailInterface[];
+  courses: courseCardInterface[];
   setCourses: any;
 }) => {
   return (
@@ -35,7 +35,7 @@ const AllCoursesResult = ({
         {courses.length < 1 ? (
           <div>No course found</div>
         ) : (
-          courses.map((item: courseDetailInterface, index: number) => {
+          courses.map((item: courseCardInterface, index: number) => {
             return <AllCoursesCards key={index} item={item} />;
           })
         )}

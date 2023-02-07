@@ -3,45 +3,48 @@ import React from "react";
 import { GrCertificate } from "react-icons/gr";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { BiTimeFive } from "react-icons/bi";
-import { courseDetailInterface } from "../../types/interface";
+import {
+  courseCardInterface,
+  courseDetailInterface,
+} from "../../types/interface";
 import { FaCertificate } from "react-icons/fa";
+import Image from "next/image";
 
-const AllCoursesCards = ({ item }: { item: courseDetailInterface }) => {
+const AllCoursesCards = ({ item }: { item: courseCardInterface }) => {
+  const { _id, course, degreeAbbr, schools, utme, faculty, years } = item;
   return (
     <Link
-      href={`/courses/${item.id}`}
+      href={`/courses/${_id}`}
       className="relative flex flex-col items-center bg-white shadow border rounded-lg mt-8 lg:mt-2 border-gray-200 md:border-0 border-b md:flex-row  hover:bg-gray-100"
     >
-      <img
-        className="object-cover w-full rounded-t-lg h-52 md:h-full md:w-60 md:rounded-none md:rounded-l-lg"
-        src="/asset/cardimg2.jpg"
+      <Image
+        width={500}
+        height={500}
+        className="object-cover w-full rounded-t-lg h-52 md:h-full md:w-60  md:rounded-lg"
+        src={`/asset/images/${schools}.jpeg`}
         alt=""
       />
       <div className="flex flex-col p-4 lg:pl-8 justify-between leading-normal md:w-full">
         <h5 className="mb-2 text-md font-thin tracking-tight text-blue-800">
-          {item.schools}
+          {schools}
         </h5>
         <h5 className="mb-2 text-md md:text-lg font-semibold tracking-tight text-gray-900">
-          {item.course}
+          {course}
         </h5>
-        <p className="mb-3 text-sm md:text-md text-gray-500">{item.cardUtme}</p>
+        <p className="mb-3 text-sm md:text-md text-gray-500">{utme}</p>
         <div className="flex flex-col md:flex-row text-left md:justify-between md:items-center gap-4 mt-4">
           <div className="hidden md:flex items-center gap-4">
             <GrCertificate className="text-blue-700" />
-            <span className="font-semibold text-blue-900">
-              {item.degreeAbbr}
-            </span>
+            <span className="font-semibold text-blue-900">{degreeAbbr}</span>
           </div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <BiTimeFive className="text-blue-700" />
-              <span className="font-semibold text-blue-900">{item.mode}</span>
+              <span className="font-semibold text-blue-900">{faculty}</span>
             </div>
             <div className="hidden md:flex items-center gap-2">
               <AiOutlineCalendar className="text-blue-700" />
-              <span className="font-semibold text-blue-900">
-                {item.years} years
-              </span>
+              <span className="font-semibold text-blue-900">{years} years</span>
             </div>
           </div>
         </div>

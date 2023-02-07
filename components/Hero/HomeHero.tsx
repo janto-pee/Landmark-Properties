@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Button from "../Button/Button";
 import { textVariants, heroVariants } from "../../utils/motionframer";
 import { motion } from "framer-motion";
@@ -25,10 +26,12 @@ const HomeHero = () => {
         <p className="md:hidden my-4 text-sm">
           “If you think education is expensive, try ignorance.” – Jeff Rich
         </p>
-        <Button
-          btnText="Choose your career"
-          btnClass="border border-gray-100 rounded-3xl p-2 px-12 hover:bg-gray-500"
-        />
+        <Link href={`/courses`}>
+          <Button
+            btnText="Choose your career"
+            btnClass="border border-gray-100 rounded-3xl p-2 px-12 hover:bg-gray-500"
+          />
+        </Link>
       </motion.div>
     </motion.div>
   );

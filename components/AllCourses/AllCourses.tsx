@@ -4,14 +4,17 @@ import Navbar from "../Header/Navbar";
 import AllCoursesResult from "./AllCoursesResult";
 import Filter from "../Filtering/Filter";
 import Footer from "../Footer/Footer";
-import { courseDetailInterface } from "../../types/interface";
+import {
+  courseCardInterface,
+  courseDetailInterface,
+} from "../../types/interface";
 import MobileNavbar from "../Header/Mobile/MobileNavbar";
 
 const AllCourses = ({
   courses,
   setCourses,
 }: {
-  courses: courseDetailInterface[];
+  courses: courseCardInterface[];
   setCourses: any;
 }) => {
   const [showNavbar, setShowNavbar] = useState(false);

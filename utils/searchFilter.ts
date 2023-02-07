@@ -39,42 +39,46 @@ export const searchFilter = [
       { name: "Yobe", value: "" },
       { name: "Zamfara", value: "" },
     ],
-    placeholder: "local state",
+    placeholder: "State",
     queryName: "localstate",
     label: "State",
   },
-  {
-    item: [
-      { name: "OAU", value: "oau" },
-      { name: "AAUA", value: "aaua" },
-      { name: "FUNAAB", value: "funaab" },
-    ],
-    placeholder: "University",
-    queryName: "university",
-  },
-  {
-    item: [
-      { name: "Kadpoly", value: "kadpoly" },
-      { name: "Gateway poly", value: "gateway" },
-      { name: "Oko poly", value: "oko" },
-    ],
-    placeholder: "Polytechnic",
-    queryName: "polytechnic",
-  },
-  {
-    item: [{ name: "Adeyemi College", value: "adeyemi" }],
-    placeholder: "College",
-    queryName: "college",
-  },
+  // {
+  //   item: [
+  //     { name: "OAU", value: "oau" },
+  //     { name: "AAUA", value: "aaua" },
+  //     { name: "FUNAAB", value: "funaab" },
+  //   ],
+  //   placeholder: "University",
+  //   queryName: "university",
+  // },
+  // {
+  //   item: [
+  //     { name: "Kadpoly", value: "kadpoly" },
+  //     { name: "Gateway poly", value: "gateway" },
+  //     { name: "Oko poly", value: "oko" },
+  //   ],
+  //   placeholder: "Polytechnic",
+  //   queryName: "polytechnic",
+  // },
+  // {
+  //   item: [{ name: "Adeyemi College", value: "adeyemi" }],
+  //   placeholder: "College",
+  //   queryName: "college",
+  // },
   {
     item: [{ name: "Law", value: "law" }],
     placeholder: "Faculty",
     queryName: "faculty",
   },
   {
-    item: [{ name: "Civil Engineering", value: "civlengineering" }],
-    placeholder: "Department",
-    queryName: "department",
+    item: [
+      { name: "University", value: "university" },
+      { name: "Polytechnic", value: "polytechnic" },
+      { name: "college", value: "college" },
+    ],
+    placeholder: "Institution",
+    queryName: "institution",
   },
 ];
 

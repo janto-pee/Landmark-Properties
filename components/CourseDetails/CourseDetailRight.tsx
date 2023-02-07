@@ -1,19 +1,42 @@
 import React from "react";
 import Cards from "../Cards/Cards";
-import { courseDetailInterface } from "../../types/interface";
+import {
+  courseDetailInterface,
+  institutionDetailInterface,
+} from "../../types/interface";
 import { IoIosCheckmark } from "react-icons/io";
 
 const CourseDetailRight = ({ course }: { course: courseDetailInterface }) => {
+  const {
+    _id,
+    utme,
+    image,
+    schools,
+    courseSummary,
+    ssce,
+    years,
+    degree,
+    degreeAbbr,
+    mode,
+    faculty,
+    institutionType,
+    isFeatured,
+    requirement,
+    remark,
+    directEntry,
+    instituteProp,
+  } = course;
+  const utmeArray = utme.split(",");
   return (
-    <div className="w-full md:basis-4/6 p-4">
+    <div className="w-full md:basis-[78%] p-4">
       <div className="my-8 ">
         <h1 className="mb-4 text-2xl">Course Summary</h1>
-        <p className="text-gray-700">{course.courseSummary}</p>
+        <p className="text-gray-700">{courseSummary}</p>
       </div>
       <div className="my-8 py-4 border-t border-b ">
         <h1 className="mb-4 text-xl ">SSCE Requirements</h1>
         <ul>
-          {course.ssce.map((item, index) => (
+          {ssce.map((item: any, index: number) => (
             <li key={index} className="my-2 text-gray-700">
               {item}
             </li>
@@ -27,7 +50,7 @@ const CourseDetailRight = ({ course }: { course: courseDetailInterface }) => {
             <IoIosCheckmark />
             <span className="text-gray-700">Use of English</span>
           </li>
-          {course.utme.map((item, index) => (
+          {utmeArray?.map((item: any, index: number) => (
             <li
               key={index}
               className="my-2 flex items-center gap-4 text-gray-700"
@@ -46,24 +69,22 @@ const CourseDetailRight = ({ course }: { course: courseDetailInterface }) => {
         </div>
         <div className="md:basis-2/3">
           <h1 className="md:hidden my-4 text-xl ">Post UTME</h1>
-          <p className="text-gray-700">{course.postutme}</p>
+          <p className="text-gray-700">
+            {instituteProp?.postUtme && instituteProp.postUtme}
+          </p>
         </div>
       </div>
       <div className="my-4 py-8 md:py-4">
         <h1 className="mb-4 text-xl ">School Fees & Funding</h1>
         <ul className="text-gray-700">
-          {course.feesAndFunding &&
-            course.feesAndFunding.map((item, index) => (
+          {instituteProp?.schoolFee &&
+            instituteProp.schoolFee.map((item: any, index: number) => (
               <li className="list-none" key={index}>
                 {item}
               </li>
             ))}
         </ul>
       </div>
-      {/* <div className="my-4 ">
-        <h1 className="mb-4 textxl ">Similar Institutions</h1>
-        <Cards />
-      </div> */}
     </div>
   );
 };

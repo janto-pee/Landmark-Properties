@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import EventCard from "../Card/EventCard";
 import { eventInterface } from "../../types/interface";
-import { baseUrl, headers } from "../../utils/fetchAPI";
+import { headers } from "../../utils/fetchAPI";
 import axios from "axios";
 
 const UpcomingEvents = () => {
@@ -9,14 +9,18 @@ const UpcomingEvents = () => {
 
   useEffect(() => {
     const fetchAPI = async () => {
-      const { data } = await axios.get(
-        "https://bing-news-search1.p.rapidapi.com/news/search?q=education",
-        headers
-      );
-      let newList = data.value.filter(
-        (item: object, index: number) => index < 3
-      );
-      setEventLists(newList);
+      try {
+        const { data } = await axios.get(
+          "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=education&pageNumber=1&pageSize=10&autoCorrect=true",
+          headers
+        );
+        let newList = data.value.filter(
+          (item: object, index: number) => index < 3
+        );
+        setEventLists(newList);
+      } catch (error: any) {
+        return;
+      }
     };
     fetchAPI();
   }, []);

@@ -2,48 +2,58 @@ import React from "react";
 import Cards from "../Cards/Cards";
 import { institutionDetailInterface } from "../../types/interface";
 import { IoIosCheckmark } from "react-icons/io";
+import Image from "next/image";
 
-const InstitutionDetailRight = ({
-  institute,
-}: {
-  institute: institutionDetailInterface;
-}) => {
+const InstitutionDetailRight = ({ institute }: { institute: any }) => {
   const imgpath = "/asset/cardgrad.jpg";
   const {
+    _id,
     name,
     instituteSummary,
-    instituteImg,
-    fullname,
+    fullSchoolName,
     pmb,
     address,
+    state,
     tel,
     position,
-    state,
-    faculty,
-    department,
+    universityType,
+    entryRequirement,
+    directEntry,
+    postUtme,
+    schoolFee,
+    isFeatured,
+    institutionType,
   } = institute;
+
+  const institutionSummaryPlaceholder = `${name} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis dolor officiis adipisci voluptatem ullam temporibus saepe eum placeat animi fuga.`;
+  const postUtmePlaceholder = `${name} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis dolor officiis adipisci voluptatem ullam.`;
+  const schoolFeePlaceholder = `${name} Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis dolor officiis adipisci voluptatem ullam.`;
   return (
     <div className="w-full lg:basis-4/6 p-2">
       <div className="my-8 ">
         <h1 className="mb-4 text-xl md:text-xl text-gray-600">Overview</h1>
-        <p className="text-gray-400 md:text-gray-500">{instituteSummary}</p>
+        <p className="text-gray-400 md:text-gray-500">
+          {instituteSummary && instituteSummary.length < 10
+            ? institutionSummaryPlaceholder
+            : instituteSummary}
+        </p>
       </div>
       <div className="my-8 ">
-        <img src={`${instituteImg ? instituteImg : imgpath}`} />
+        <Image width={500} height={500} src={`/${name}`} alt={name} />
       </div>
       <div className="my-8 py-4 border-t border-b ">
-        <h1 className="mb-4 text-xl md:text-xl text-gray-600">Faculty</h1>
-        <ul>
-          {faculty &&
-            faculty.map((item, index) => (
-              <li key={index} className="my-2 text-gray-400 md:text-gray-500">
-                {item}
-              </li>
-            ))}
-        </ul>
+        <h1 className="mb-4 text-xl md:text-xl text-gray-600">
+          General Entry Requirment
+        </h1>
+
+        <p className="my-2 text-gray-400 md:text-gray-500">
+          {entryRequirement}
+        </p>
       </div>
       <div className="my-8 py-4">
-        <h1 className="mb-4 text-xl md:text-xl text-gray-600 ">Department</h1>
+        <h1 className="mb-4 text-xl md:text-xl text-gray-600 ">
+          Direct Entry Requirement
+        </h1>
         <ul>
           <li className="flex items-center gap-4">
             <IoIosCheckmark />
@@ -51,30 +61,37 @@ const InstitutionDetailRight = ({
               Use of English
             </span>
           </li>
-          {department &&
-            department.map((item, index) => (
-              <li
-                key={index}
-                className="my-2 flex items-center gap-4 text-gray-400 md:text-gray-500"
-              >
-                <IoIosCheckmark />
-                <span>{item}</span>
-              </li>
-            ))}
+          {directEntry && directEntry.length > 0
+            ? directEntry.map((item: string[], index: number) => (
+                <li
+                  key={index}
+                  className="my-2 flex items-center gap-4 text-gray-400 md:text-gray-500"
+                >
+                  <IoIosCheckmark />
+                  <span>{item}</span>
+                </li>
+              ))
+            : "coming soon"}
         </ul>
       </div>
-      {/* <div className="my-4 py-8 md:py-4">
-        <h1 className="mb-4 text-xl md:text-xl text-gray-600 ">
-          School Fees & Funding
-        </h1>
+      <div className="my-4 py-8 md:py-4">
+        <h1 className="mb-4 text-xl md:text-xl text-gray-600 ">Post Jamb</h1>
+        <p className="my-2 text-gray-400 md:text-gray-500">
+          {postUtme && postUtme.length < 4 ? postUtmePlaceholder : postUtme}
+        </p>
+      </div>
+      <div className="my-4 py-8 md:py-4">
+        <h1 className="mb-4 text-xl md:text-xl text-gray-600 ">School Fee</h1>
         <ul className="text-gray-400 md:text-gray-500">
-          {course.feesAndFunding.map((item, index) => (
-            <li className="list-none" key={index}>
-              {item}
-            </li>
-          ))}
+          {schoolFee && schoolFee.length < 1
+            ? schoolFeePlaceholder
+            : schoolFee?.map((item: string[], index: number) => (
+                <li className="list-none" key={index}>
+                  {item}
+                </li>
+              ))}
         </ul>
-      </div> */}
+      </div>
     </div>
   );
 };

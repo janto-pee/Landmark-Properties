@@ -10,8 +10,9 @@ import MobileNavbar from "../Header/Mobile/MobileNavbar";
 const InstitutionDetails = ({
   institute,
 }: {
-  institute: institutionDetailInterface;
+  institute?: institutionDetailInterface;
 }) => {
+  const title = institute && institute?.fullSchoolName;
   const [showNavbar, setShowNavbar] = useState(false);
   return (
     <div>
@@ -25,11 +26,11 @@ const InstitutionDetails = ({
           <MobileNavbar showNavbar={showNavbar} setShowNavbar={setShowNavbar} />
         )}
       </div>
-      <CoursesHero title="Obafemi Awolowo University" />
+      <CoursesHero title={title} />
 
       <div className="flex flex-col md:flex-row items-start gap-4 my-4 w-[95%] mx-auto">
-        <InstitutionDetailRight institute={institute} />
-        <InstitutionDetailLeft institute={institute} />
+        {<InstitutionDetailRight institute={institute} />}
+        {<InstitutionDetailLeft institute={institute} />}
       </div>
       <Footer />
     </div>

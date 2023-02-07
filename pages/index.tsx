@@ -5,16 +5,13 @@ import {
   eventInterface,
   homeCardInterface,
 } from "../types/interface";
-import { eventsList } from "../utils/data";
-import { homeData } from "../utils/fetchAPI";
+import axios from "axios";
 
 export interface Iprops {
-  courses: courseDetailInterface[];
-  eventList: eventInterface[];
-  homeCourse: homeCardInterface[];
+  data: homeCardInterface[];
 }
 
-export default function Home({ homeCourse }: Iprops) {
+export default function Home({ data }: Iprops) {
   return (
     <div>
       <Head>
@@ -22,21 +19,24 @@ export default function Home({ homeCourse }: Iprops) {
           Jamb Courses| Joint Admission and Matriculation Board Courses
         </title>
       </Head>
-      <Homepage courses={homeCourse} />
+      <Homepage courses={data} />
     </div>
   );
 }
 
 export async function getStaticProps() {
-  const res = await homeData();
+  const res = await axios.get(
+    "https://jc-course-2.onrender.com/api/courses/featured"
+  );
+  const data = await res.data;
 
-  if (!res) {
+  if (!data) {
     props: {
       hasError: true;
     }
   }
 
   return {
-    props: { homeCourse: res },
+    props: { data: data?.courses },
   };
 }
