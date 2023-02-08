@@ -1,9 +1,6 @@
 import React from "react";
 import Cards from "../Cards/Cards";
-import {
-  courseDetailInterface,
-  institutionDetailInterface,
-} from "../../types/interface";
+import { courseDetailInterface } from "../../types/interface";
 import { IoIosCheckmark } from "react-icons/io";
 
 const CourseDetailRight = ({ course }: { course: courseDetailInterface }) => {
@@ -34,7 +31,9 @@ const CourseDetailRight = ({ course }: { course: courseDetailInterface }) => {
     "including English Language and Mathematics at not more than two sittings (See tables for other faculty requirements).",
   ];
 
-  const courseSummaryPlaceholder = `Please read carefully about the entry requirements, O'Level and post-UTME requirement of ${course.course.toLowerCase()}`;
+  const courseSummaryPlaceholder = [
+    `Please read carefully about the entry requirements, O'Level and post-UTME requirement of ${course.course.toLowerCase()}`,
+  ];
   const postUtmePlaceholder =
     "Generally, PostUTME screening are carried out after JAMB examination for candidates who meet the cut off mark of selected courses. Therefore, postutme information will be available after JAMB";
   const schoolFeesPlacholder =
@@ -51,7 +50,13 @@ const CourseDetailRight = ({ course }: { course: courseDetailInterface }) => {
     <div className="w-full md:basis-[78%] p-4">
       <div className="my-8 ">
         <h1 className="mb-4 text-2xl">Course Summary</h1>
-        <p className="text-gray-700">{entryReq}</p>
+        <div>
+          {entryReq.map((item, index) => (
+            <p className="text-gray-700" key={index}>
+              {item}
+            </p>
+          ))}
+        </div>
       </div>
       <div className="my-8 py-4 border-t border-b ">
         <h1 className="mb-4 text-xl ">SSCE Requirements</h1>

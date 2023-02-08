@@ -25,26 +25,26 @@ const AllCoursesCards = ({ item }: { item: courseCardInterface }) => {
         alt=""
       />
       <div className="flex flex-col p-4 lg:pl-8 justify-between leading-normal md:w-full">
-        <h5 className="mb-2 text-md font-thin tracking-tight text-blue-800">
+        <h5 className="mb-2 text-md font-thin tracking-tight text-blue-800  text-[7e7e7e] text-[15px]">
           {schools}
         </h5>
-        <h5 className="mb-2 text-md md:text-lg font-semibold tracking-tight text-gray-900">
+        <h5 className="mb-2 text-md md:text-lg font-semibold tracking-tight text-gray-700 lg:text-[18px]">
           {course}
         </h5>
         <p className="mb-3 text-sm md:text-md text-gray-500">{utme}</p>
         <div className="flex flex-col md:flex-row text-left md:justify-between md:items-center gap-4 mt-4">
           <div className="hidden md:flex items-center gap-4">
-            <GrCertificate className="text-blue-700" />
-            <span className="font-semibold text-blue-900">{degreeAbbr}</span>
+            <GrCertificate className="text-gray-500" />
+            <span className="text-gray-500">{degreeAbbr}</span>
           </div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <BiTimeFive className="text-blue-700" />
-              <span className="font-semibold text-blue-900">{faculty}</span>
+              <BiTimeFive className="text-gray-500" />
+              <span className="text-gray-500">{faculty}</span>
             </div>
             <div className="hidden md:flex items-center gap-2">
-              <AiOutlineCalendar className="text-blue-700" />
-              <span className="font-semibold text-blue-900">{years} years</span>
+              <AiOutlineCalendar className="text-gray-500" />
+              <span className="text-gray-500">{years} years</span>
             </div>
           </div>
         </div>

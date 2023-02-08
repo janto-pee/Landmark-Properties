@@ -12,7 +12,7 @@ export default function Institutions({
 }: {
   allInstitution: institutionCardInterface[];
 }) {
-  console.log(allInstitution);
+  // console.log(allInstitution);
   const router = useRouter();
   const search = router.query.search;
   const localState = router.query.localState;

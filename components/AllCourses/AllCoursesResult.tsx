@@ -15,7 +15,7 @@ const AllCoursesResult = ({
   return (
     <div className="w-full bg-white rounded-sm courses-search-result-boxshadow lg:col-span-3">
       <div className="flex items-center justify-between border-b border-gray-200 p-4">
-        <span>{courses.length} results</span>
+        <span className="text-gray-500">{courses.length} results</span>
 
         <div className="flex items-center gap-4">
           <div className="hidden lg:flex px-8 py-2 rounded-md items-center justify-between border border-gray-300 bg-white gap-2">

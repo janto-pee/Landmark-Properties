@@ -7,16 +7,20 @@ import { courseDetailInterface } from "../../types/interface";
 import Image from "next/image";
 
 const CourseDetailHero = ({ course }: { course: courseDetailInterface }) => {
+  // console.log(course.instituteProp?.fullSchoolName, course.course);
   return (
     <section className="bg-gray-900">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-        <p className="hidden md:flex justify-center text-gray-200 text-md mt-4 mb-2">
+        {/* <p className="hidden md:flex justify-center text-gray-200 text-md mt-4 mb-2">
           {course.degree && course.degree}
-        </p>
+        </p> */}
         <h1 className="my-4 text-lg  font-extrabold tracking-tight leading-none md:text-4xl lg:text-5xl text-white">
+          {course.instituteProp?.fullSchoolName &&
+            course.instituteProp?.fullSchoolName}
+        </h1>
+        <h1 className="my-4 text-sm leading-none md:text-2xl lg:text-2xl text-white">
           {course.course && course.course}
         </h1>
-        {/* <p className="md:hidden text-gray-400 text-sm mb-4">{course?.instituteProp[0]?.fullSchoolName}</p> */}
         <Image
           width={500}
           height={500}

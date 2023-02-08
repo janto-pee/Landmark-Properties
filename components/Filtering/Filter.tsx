@@ -13,7 +13,7 @@ const Filter = () => {
   const [toggleFilter, setToggleFilter] = useState(true);
 
   const searchProperties = (filtervalues: any) => {
-    console.log(filtervalues);
+    // console.log(filtervalues);
     const path = router.pathname;
     const { query } = router;
 

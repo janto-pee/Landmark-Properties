@@ -12,7 +12,7 @@ export default function Home({ data }: Iprops) {
     <div>
       <Head>
         <title>
-          Jambite Portal| Joint Admission and Matriculation Board Courses
+          Jambite Portal | Joint Admission and Matriculation Board Courses
         </title>
       </Head>
       <Homepage courses={data} />
