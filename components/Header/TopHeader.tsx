@@ -22,15 +22,15 @@ const TopHeader = () => {
       <div className="container w-[95%] px-4 py-4 flex flex-wrap items-center justify-between mx-auto">
         <div className="flex items-center space-x-8 lg:basis-4/6">
           <Link href="/" className="flex items-center">
-            <Image
+            {/* <Image
               width={500}
               height={500}
               src="/favicon.ico"
               className="h-6 mr-1 sm:h-9"
               alt="Flowbite Logo"
-            />
+            /> */}
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-              JambCourses
+              JambitePortal
             </span>
           </Link>
           <Link href={"/institutions"}>

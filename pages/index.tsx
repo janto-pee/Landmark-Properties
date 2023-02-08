@@ -1,10 +1,6 @@
 import Head from "next/head";
 import Homepage from "../components/Homepage/Homepage";
-import {
-  courseDetailInterface,
-  eventInterface,
-  homeCardInterface,
-} from "../types/interface";
+import { homeCardInterface } from "../types/interface";
 import axios from "axios";
 
 export interface Iprops {
@@ -16,7 +12,7 @@ export default function Home({ data }: Iprops) {
     <div>
       <Head>
         <title>
-          Jamb Courses| Joint Admission and Matriculation Board Courses
+          Jambite Portal| Joint Admission and Matriculation Board Courses
         </title>
       </Head>
       <Homepage courses={data} />

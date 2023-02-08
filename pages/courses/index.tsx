@@ -33,26 +33,27 @@ export default function Courses({
         );
         const data = await res.json();
         setCourses(data);
+        console.log(data);
         setLoading(false);
       };
       fetchFiltered();
     }
   }, [faculty, department, institutions]);
 
-  useEffect(() => {
-    if (searchCourse != "" || !loading) {
-      const fetchSearch = async () => {
-        setLoading(true);
-        const res = await axios.get(
-          `https://jc-course-2.onrender.com/api/courses/filtered?search=${search}`
-        );
-        const data = await res.data;
-        setSearchCourse(data);
-        setLoading(false);
-      };
-      fetchSearch();
-    }
-  }, [searchCourse]);
+  // useEffect(() => {
+  //   if (searchCourse != "" || !loading) {
+  //     const fetchSearch = async () => {
+  //       setLoading(true);
+  //       const res = await axios.get(
+  //         `https://jc-course-2.onrender.com/api/courses/filtered?search=${search}`
+  //       );
+  //       const data = await res.data;
+  //       setSearchCourse(data);
+  //       setLoading(false);
+  //     };
+  //     fetchSearch();
+  //   }
+  // }, [searchCourse]);
 
   return (
     <div>

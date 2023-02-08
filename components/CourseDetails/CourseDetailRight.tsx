@@ -26,12 +26,32 @@ const CourseDetailRight = ({ course }: { course: courseDetailInterface }) => {
     directEntry,
     instituteProp,
   } = course;
+
+  const entryRequirementPlaceholder = [
+    "1.The Entrance Examination is conducted by JAMB. In addition to attaining the required standard in entrance examination",
+    "candidates must satisfy the general University as well as specific Faculty requirements.For the general requirement",
+    "candidates must obtain at least a credit pass in five subjects at S.S.C.E. O’Level or approved equivalent",
+    "including English Language and Mathematics at not more than two sittings (See tables for other faculty requirements).",
+  ];
+
+  const courseSummaryPlaceholder = `Please read carefully about the entry requirements, O'Level and post-UTME requirement of ${course.course.toLowerCase()}`;
+  const postUtmePlaceholder =
+    "Generally, PostUTME screening are carried out after JAMB examination for candidates who meet the cut off mark of selected courses. Therefore, postutme information will be available after JAMB";
+  const schoolFeesPlacholder =
+    "No school fees information available yet for this course";
   const utmeArray = utme.split(",");
+  let entryReq;
+  if (instituteProp?.entryRequirement != undefined) {
+    entryReq = instituteProp.entryRequirement;
+  } else {
+    entryReq = courseSummaryPlaceholder;
+  }
+
   return (
     <div className="w-full md:basis-[78%] p-4">
       <div className="my-8 ">
         <h1 className="mb-4 text-2xl">Course Summary</h1>
-        <p className="text-gray-700">{courseSummary}</p>
+        <p className="text-gray-700">{entryReq}</p>
       </div>
       <div className="my-8 py-4 border-t border-b ">
         <h1 className="mb-4 text-xl ">SSCE Requirements</h1>
@@ -69,20 +89,19 @@ const CourseDetailRight = ({ course }: { course: courseDetailInterface }) => {
         </div>
         <div className="md:basis-2/3">
           <h1 className="md:hidden my-4 text-xl ">Post UTME</h1>
-          <p className="text-gray-700">
-            {instituteProp?.postUtme && instituteProp.postUtme}
-          </p>
+          <p className="text-gray-700">{postUtmePlaceholder}</p>
         </div>
       </div>
       <div className="my-4 py-8 md:py-4">
         <h1 className="mb-4 text-xl ">School Fees & Funding</h1>
         <ul className="text-gray-700">
-          {instituteProp?.schoolFee &&
-            instituteProp.schoolFee.map((item: any, index: number) => (
-              <li className="list-none" key={index}>
-                {item}
-              </li>
-            ))}
+          {instituteProp?.schoolFee && instituteProp.schoolFee.length > 0
+            ? instituteProp.schoolFee.map((item: any, index: number) => (
+                <li className="list-none" key={index}>
+                  {item}
+                </li>
+              ))
+            : schoolFeesPlacholder}
         </ul>
       </div>
     </div>

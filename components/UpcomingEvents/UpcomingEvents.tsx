@@ -19,7 +19,7 @@ const UpcomingEvents = () => {
         );
         setEventLists(newList);
       } catch (error: any) {
-        return;
+        return error;
       }
     };
     fetchAPI();

@@ -19,7 +19,7 @@ const ContactBreaker = () => {
         <div className="flex flex-col md:items-center gap-2 ">
           <AiOutlineMail className="text-[2rem] md:text-[5rem] text-gray-600" />
           <p className="text-lg my-2 md:my-0">Our Email</p>
-          <p className="text-sm text-gray-600">jambcourses@gmail.com</p>
+          <p className="text-sm text-gray-600">JambitePortal@gmail.com</p>
         </div>
       </div>
     </div>
