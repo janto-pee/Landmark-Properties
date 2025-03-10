@@ -1,0 +1,1 @@
+django djangorestframework djangorestframework-simplejwt django-storages django-cors-headers django-dotenv django-filter gunicorn geocoder whitenoise boto3 psycopg2 dj-database-url

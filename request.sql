@@ -1,0 +1,18 @@
+-- <!-- properties
+-- POST - properties/v3/list
+-- GET - properties/v3/list-similar-homes
+-- GET - properties/v3/detail
+-- GET - properties/v3/get-photos
+-- GET - properties/v3/get-commute-time
+-- GET - properties/v3/get-surroundings
+-- agents
+-- GET - agents/list
+-- GET - agents/get-profile
+-- GET - agents/get-reviews
+-- GET - agents/get-recommendations
+-- GET - agents/get-listings
+-- schools
+-- GET - schools/list
+-- GET - schools/detail
+-- GET - schools/get-school-district
+-- GET - schools/list-nearby (Deprecated) -->
